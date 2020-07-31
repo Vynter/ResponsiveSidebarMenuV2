@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.body {
+    height: 100vh;
+    background: #2e2e2e;
+    background: url(portfolio.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+.navigation {
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #4b4a4a;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation:hover {
+    width: 300px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+
+.navigation ul li:hover {
+    background: #3d3c3c;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.icon {
+    display: block;
+    min-width: 60px;
+    height: 80px;
+    /*normalement 60*/
+    line-height: 80px;
+    /*normalement 60*/
+    text-align: center;
+}
+
+.icon .fa {
+    font-size: 24px;
+}
+
+.Title {
+    /*position: relative;*/
+    display: block;
+    min-width: 60px;
+    height: 80px;
+    /*normalement 60*/
+    line-height: 80px;
+    /*normalement 60*/
+    transition: ease-in-out 0.4s;
+    text-align: start;
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: #4b4a4a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.trait {
+    width: 50px;
+    height: 5px;
+    background: white;
+    margin: 5px;
+    display: none;
+}
+
+.toggle.active {
+    background: #3d3c3c;
+}
+
+.toggle::before {
+    content: '\f0c9';
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 34px;
+    color: white;
+}
+
+.toggle.active:before {
+    content: '\f00d';
+}
+
+.navigation.active {
+    width: 300px;
+}
+
+.navigation.active ul li a .Title {
+    opacity: 1;
+}
+
+/*.body.active {
+    margin-left: 300px;
+    width: calc(100%-300px);
+}
+*/
+
+@media(max-width:767px) {
+    .navigation {
+        left: -60px;
+    }
+    .navigation.active {
+        width: 100%;
+        left: 0px;
+    }
+    .navigation ul li a {
+        justify-content: center;
+        align-items: center;
+    }
+}
